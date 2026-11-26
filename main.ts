@@ -1,11 +1,16 @@
 // Fortune Cookie for the Liquidated Trader
-// Writes one fortune cookie line for a crypto trader who just got liquidated
-// to /output/entry.txt (MAKEFUN_OUTPUT_DIR overrides /output outside the grader).
+// One fortune cookie line for a crypto trader who just got liquidated,
+// written to /output/entry.txt (MAKEFUN_OUTPUT_DIR overrides /output outside the grader).
 // Gate: UTF-8 text of 1..160 characters, not only whitespace; at most 20 words.
+// The fortune voice promises wealth first, then the cookie confesses it is
+// broke too — the punchline breaks the oracle's formal phrasing.
 import { mkdirSync, writeFileSync } from "node:fs";
 
-const entry =
-  "Your portfolio will recover, the cookie says, before adding: this cookie is down 97% too.";
+// Setup: the classic fortune-cookie promise.
+const setup = "Great wealth awaits you, says the cookie —";
+// Punchline: the cookie's own confession.
+const punch = "right after it admits it is also down 97%.";
+const entry = `${setup} ${punch}`;
 
 // Gate guard: single line, file content (entry + newline) within 1..160 chars,
 // and at most 20 words.
