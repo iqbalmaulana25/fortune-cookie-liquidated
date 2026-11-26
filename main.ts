@@ -7,7 +7,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 
 // Setup: the classic fortune-cookie promise.
-const setup = "Great wealth awaits you, says the cookie —";
+const setup = "Great wealth awaits you, the cookie promises —";
 // Punchline: the cookie's own confession.
 const punch = "right after admitting it is down 97% too.";
 const entry = `${setup} ${punch}`;

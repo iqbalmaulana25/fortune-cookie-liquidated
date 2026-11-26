@@ -15,4 +15,4 @@ cat /output/entry.txt
 
 ## Entry
 
-> Your portfolio will recover, the cookie says, before adding: this cookie is down 97% too.
+> Great wealth awaits you, the cookie promises — right after admitting it is down 97% too.
