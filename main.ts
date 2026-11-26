@@ -9,7 +9,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 // Setup: the classic fortune-cookie promise.
 const setup = "Great wealth awaits you, says the cookie —";
 // Punchline: the cookie's own confession.
-const punch = "right after it admits it is also down 97%.";
+const punch = "right after admitting it is down 97% too.";
 const entry = `${setup} ${punch}`;
 
 // Gate guard: single line, file content (entry + newline) within 1..160 chars,
