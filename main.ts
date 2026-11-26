@@ -6,8 +6,10 @@
 // broke too — the punchline breaks the oracle's formal phrasing.
 import { mkdirSync, writeFileSync } from "node:fs";
 
+// Competition: Fortune Cookie for the Liquidated Trader.
 // Setup: the classic fortune-cookie promise.
-const setup = "Great wealth awaits you, the cookie promises —";
+const SETUP_LINE = "Great wealth awaits you, the cookie promises —";
+const setup: string = SETUP_LINE;
 // Punchline: the cookie's own confession.
 const punch = "right after admitting it is down 97% too.";
 const entry = `${setup} ${punch}`;
@@ -19,7 +21,12 @@ if (entry.includes("\n") || entry.trim().length === 0 || entry.length + 1 > 160 
   throw new Error(`entry breaks the gate: ${entry.length} characters, ${wordCount} words`);
 }
 
-const outDir = process.env.MAKEFUN_OUTPUT_DIR || "/output";
-mkdirSync(outDir, { recursive: true });
-writeFileSync(`${outDir}/entry.txt`, entry + "\n", "utf8");
-console.log(entry);
+function main(): void {
+  if (entry.length > 159) throw new Error("entry exceeds the 160-char gate");
+  const outDir = process.env.MAKEFUN_OUTPUT_DIR || "/output";
+  mkdirSync(outDir, { recursive: true });
+  writeFileSync(`${outDir}/entry.txt`, entry + "\n", "utf8");
+  console.log(entry);
+}
+
+main();
